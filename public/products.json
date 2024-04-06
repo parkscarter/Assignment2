@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Regular Show",
+      "imageSrc": "",
+      "price": 45.00
+    },
+    {
+      "id": 2,
+      "name": "Adventure Time",
+      "imageSrc": "",
+      "price": 35.00
+    },
+    {
+      "id": 3,
+      "name": "Spongebob",
+      "imageSrc": "",
+      "price": 30.00
+    },
+    {
+      "id": 4,
+      "name": "Pokemon",
+      "imageSrc": "",
+      "price": 25.00
+    },
+    {
+      "id": 5,
+      "name": "Mordecai",
+      "imageSrc": "",
+      "price": 7.49
+    },
+    {
+      "id": 6,
+      "name": "Jake",
+      "imageSrc": "",
+      "price": 6.55
+    },
+    {
+      "id": 7,
+      "name": "Spongebob SquarePants",
+      "imageSrc": "",
+      "price": 15.99
+    },
+    {
+      "id": 8,
+      "name": "Meowth",
+      "imageSrc": "",
+      "price": 4.50
+    }
+  ]
+}

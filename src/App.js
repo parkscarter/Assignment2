@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { Browse } from "./Browse";
+import { Cart } from "./Cart";
 
-function App() {
+
+export function App() {
+  const [page, changePage] = useState("Browse");
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [productPrices, setProductPrices] = useState([]);
+
+  useEffect(() => {
+    fetch("./products.json")
+      .then((response) => response.json())
+      .then((json) => {
+        json = json.products;
+        setProducts(json);
+        setCart(Object.fromEntries(json.map((product) => [product.name, 0])));
+        setProductPrices(
+          Object.fromEntries(
+            json.map((product) => [product.name, product.price])
+          )
+        );
+      });
+  }, []);
+
+  function removeFromCart(productName) {
+    setCart((prevState) => ({
+      ...prevState,
+      [productName]: Math.max(0, cart[productName] - 1),
+    }));
+  }
+  function addToCart(productName) {
+    setCart((prevState) => ({
+      ...prevState,
+      [productName]: cart[productName] + 1,
+    }));
+  }
+  function resetCart(productName) {
+    setCart((prevState) => ({
+      ...prevState,
+      [productName]: 0,
+    }));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="h-screen" style={{ backgroundColor: "grey" }}>
+      <header className="bg-blue-600 text-white text-center py-4">
+        <h1 className="text-3xl font-bold">Popular Cartoons</h1>
       </header>
+      <Browse
+        isActive={page === "Browse"}
+        changePage={changePage}
+        cart={cart}
+        removeFromCart={removeFromCart}
+        addToCart={addToCart}
+        productPrices={productPrices}
+        products={products}
+      />
+      <Cart
+        isActive={page === "Cart"}
+        changePage={changePage}
+        addToCart={addToCart}
+        resetCart={resetCart}
+        cart={cart}
+        productPrices={productPrices}
+      />
     </div>
   );
 }
-
-export default App;
