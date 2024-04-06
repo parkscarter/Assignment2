@@ -1,5 +1,5 @@
-
 import React from "react";
+import { isCompositeComponentWithType } from "react-dom/test-utils";
 //import { Products } from "./Products";
 
 var order = {
@@ -15,6 +15,7 @@ function validate(order) {
   let name = document.getElementById("inputName");
   let card = document.getElementById("inputCard");
   let zip = document.getElementById("inputZip");
+  let city = document.getElementById("inputCity");
   let state = document.getElementById("inputState");
   let address = document.getElementById("inputAddress");
   const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
@@ -37,24 +38,27 @@ function validate(order) {
     order.email = email.value;
   }
 
-  if (
-    !zip.value.match(
-      /^[0-9]{5}(?:-[0-9]{4})?$/
-    )
-  ) {
+  if (!zip.value.match(/^[0-9]{5}(?:-[0-9]{4})?$/)) {
     zip.setAttribute("class", "form-control is-invalid");
     val = false;
   } else {
     zip.setAttribute("class", "form-control is-valid");
   }
 
-  if (
-    state.value === "Choose"
-  ) {
+  if (city.value.length === 0) {
+    city.setAttribute("class", "form-control is-invalid");
+    val = false;
+  } else {
+    city.setAttribute("class", "form-control is-valid");
+    order.city = city.value;
+  }
+
+  if (state.value.length === 0) {
     state.setAttribute("class", "form-control is-invalid");
     val = false;
   } else {
     state.setAttribute("class", "form-control is-valid");
+    order.state = state.value;
   }
 
   if (address.value.length === 0) {
@@ -147,6 +151,7 @@ export function Cart({ isActive, changePage, cart, productPrices, resetCart }) {
       inputCard.value = newVal;
     }
   }
+
   function backShopping() {
     changePage("Browse");
   }
@@ -279,8 +284,8 @@ export function Cart({ isActive, changePage, cart, productPrices, resetCart }) {
                     placeholder="XXXX-XXXX-XXXX-XXXX"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
-                    onChange={() => {
-                      inputCardValidator();
+                    onChange={(event) => {
+                      inputCardValidator(event); // Pass the event parameter
                     }}
                   ></input>
                   <div className="valid-feedback">Looks good!</div>
@@ -326,12 +331,11 @@ export function Cart({ isActive, changePage, cart, productPrices, resetCart }) {
                 <label htmlFor="inputState" className="form-label">
                   State
                 </label>
-                <select id="inputState" className="form-select">
-                <option>Choose</option>
-                <option>Iowa</option>
-                <option>California</option>
-                <option>Florida</option>
-                </select>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="inputState"
+                ></input>
               </div>
               <div className="col-md-2">
                 <label htmlFor="inputZip" className="form-label">
@@ -375,14 +379,7 @@ export function Cart({ isActive, changePage, cart, productPrices, resetCart }) {
               <button
                 href=""
                 onClick={() => {
-                  resetCart("Regular Show");
-                  resetCart("Adventure Time");
-                  resetCart("Spongebob");
-                  resetCart("pokemon");
-                  resetCart("mordecai");
-                  resetCart("jake");
-                  resetCart("spongebob");
-                  resetCart("meowth");
+                  resetCart();
                   changePage("Browse");
                 }}
                 className="btn btn-secondary"

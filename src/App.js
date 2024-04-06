@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Browse } from "./Browse";
 import { Cart } from "./Cart";
 
-
 export function App() {
   const [page, changePage] = useState("Browse");
   const [products, setProducts] = useState([]);
@@ -36,15 +35,17 @@ export function App() {
       [productName]: cart[productName] + 1,
     }));
   }
-  function resetCart(productName) {
-    setCart((prevState) => ({
-      ...prevState,
-      [productName]: 0,
-    }));
+
+  function resetCart() {
+    const updatedCart = {};
+    Object.keys(cart).forEach((key) => {
+      updatedCart[key] = 0; // Set the quantity of each item to zero
+    });
+    setCart(updatedCart); // Update the cart state with the modified cart
   }
 
   return (
-    <div className="h-screen" style={{ backgroundColor: "grey" }}>
+    <div className="screen" style={{ backgroundColor: "grey" }}>
       <header className="bg-blue-600 text-white text-center py-4">
         <h1 className="text-3xl font-bold">Popular Cartoons</h1>
       </header>
