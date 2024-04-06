@@ -43,13 +43,14 @@ const Shop = () => {
   const listItems = items.map((el) => (
     // PRODUCT
     <div class="row border-top border-bottom" key={el.id}>
+      <div class="mt-2"></div>
       <div class="row main align-items-center">
         <div class="col-2">
           <img class="img-fluid" src={el.image} />
         </div>
         <div class="col">
           <div class="row text-muted">{el.title}</div>
-          <div class="row">{el.category}</div>
+          <div class="row">{el.release}</div>
         </div>
         <div class="col">
           <button
@@ -70,6 +71,7 @@ const Shop = () => {
           {howManyofThis(el.id)}
         </div>
       </div>
+      <div class="mt-2"></div>
     </div>
   ));
 
