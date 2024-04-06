@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Regular Show",
+    "price": 10.95,
+    "description": "Two best friends, a blue jay named Mordecai and a brown raccoon named Rigby, work as groundskeepers at a park, spending their days trying to entertain themselves while trying to deal with their by-the-book boss, Benson, a high-tempered gumball machine. ",
+    "release": 2010,
+    "image": "/images/regularshow.jpg",
+    "rating": { "rate": 3.9, "count": 120 }
+  },
+  {
+    "id": 2,
+    "title": "Adventure Time",
+    "price": 12.50,
+    "description": "Twelve-year-old Finn battles evil in the Land of Ooo. Assisted by his magical dog, Jake, Finn roams the Land of Ooo righting wrongs and battling evil. Usually that evil comes in the form of the Ice King. ",
+    "release": 2010,
+    "image": "/images/adventuretime.jpg",
+    "rating": { "rate": 4.1, "count": 106 }
+  },
+  {
+    "id": 3,
+    "title": "Pokemon",
+    "price": 14.75,
+    "description": "Ten-year-old Ash aspires to be the greatest Pokémon (Pocket Monster) trainer in the world. To do this, he enlists the help of many friends, and his own Pokémon, Pikachu. Together, they must search their world for new Legendary Pokémon while avoiding the likes of Team Rocket. ",
+    "release": 1997,
+    "image": "/images/pokemon.jpg",
+    "rating": { "rate": 4.2, "count": 236 }
+  },
+  {
+    "id": 4,
+    "title": "Spongebob Squarepants",
+    "price": 16.50,
+    "description": "SpongeBob SquarePants is a square yellow sponge who lives in a pineapple in the city of Bikini Bottom on the floor of the Pacific Ocean. He works at the Krusty Krab as a fry cook, but during his time off SpongeBob and his starfish best friend, Patrick have a knack for trouble. ",
+    "release": 1999,
+    "image": "/images/spongebob.jpg",
+    "rating": { "rate": 3.7, "count": 174 }
+  },
+  {
+    "id": 5,
+    "title": "The Fairly Odd Parents",
+    "price": 10.15,
+    "description": "Timmy Turner is a boy with fairy godparents, Cosmo and Wanda. They grant his wishes and go on adventures, blending imaginative storytelling with humor for all ages. ",
+    "release": 2001,
+    "image": "/images/farilyoddparents.jpg",
+    "rating": { "rate": 4.0, "count": 163 }
+  },
+  {
+    "id": 6,
+    "title": "The Adventures of Jimmy Neutron: Boy Genius",
+    "price": 10.15,
+    "description": "The Adventures of Jimmy Neutron: Boy Genius is an animated series about Jimmy Neutron, a young genius inventor. With his friends and robot dog, he embarks on exciting adventures filled with humor and creativity. ",
+    "release": 2002,
+    "image": "/images/jimmyneutron.jpg",
+    "rating": { "rate": 3.2, "count": 95 }
+  },
+  {
+    "id": 7,
+    "title": "Rick and Morty",
+    "price": 14.25,
+    "description": " Follow along with the adventures of a brilliant scientist, Rick Sanchez, and his awkward grandson Morty. With bizarre creatures and alternate realities, it's known for its witty writing and unique take on science fiction. ",
+    "release": 2013,
+    "image": "/images/rickandmorty.jpg",
+    "rating": { "rate": 3.7, "count": 139 }
+  },
+  {
+    "id": 8,
+    "title": "Southpark",
+    "price": 16.95,
+    "description": " Southpark is a satirical animated comedy set in the fictional town of South Park, Colorado. Follow four boys—Stan, Kyle, Cartman, and Kenny—as they tackle hilarious and controversial situations with irreverent humor and sharp social commentary. ",
+    "release": 1999,
+    "image": "/images/southpark.jpg",
+    "rating": { "rate": 4.4, "count": 216 }
+  }
+]
