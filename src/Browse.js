@@ -57,7 +57,7 @@ export function Browse({
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 ">
           {filtered.map((product) => (
             <div key={product.id}>
-              <div className="w-full overflow-hidden rounded-md bg-gray-100 lg:h-50">
+              <div className="w-full h-60 overflow-hidden rounded-md bg-gray-100 lg:h-72">
                 <img
                   src={product.imageSrc}
                   alt={product.name}
@@ -67,6 +67,9 @@ export function Browse({
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-white">{product.name}</h3>
+                  <p className="text-sm text-white">
+                    Released: {product.release}
+                  </p>
                 </div>
                 <p className="text-sm font-medium text-white">
                   ${product.price.toFixed(2)}

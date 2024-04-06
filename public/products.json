@@ -4,48 +4,56 @@
       "id": 1,
       "name": "Regular Show",
       "price": 10.95,
+      "release": 2010,
       "imageSrc": "/images/regularshow.jpg"
     },
     {
       "id": 2,
       "name": "Adventure Time",
       "price": 12.50,
+      "release": 2010,
       "imageSrc": "/images/adventuretime.jpg"
     },
     {
       "id": 3,
       "name": "Pokemon",
       "price": 14.75,
+      "release": 1997,
       "imageSrc": "/images/pokemon.jpg"
     },
     {
       "id": 4,
       "name": "Spongebob Squarepants",
       "price": 16.50,
+      "release": 1999,
       "imageSrc": "/images/spongebob.jpg"
     },
     {
       "id": 5,
       "name": "The Fairly Odd Parents",
       "price": 10.15,
+      "release": 2001,
       "imageSrc": "/images/farilyoddparents.jpg"
     },
     {
       "id": 6,
       "name": "The Adventures of Jimmy Neutron: Boy Genius",
       "price": 16.85,
+      "release": 2002,
       "imageSrc": "/images/jimmyneutron.jpg"
     },
     {
       "id": 7,
       "name": "Rick and Morty",
       "price": 14.25,
+      "release": 2013,
       "imageSrc": "/images/rickandmorty.jpg"
     },
     {
       "id": 8,
       "name": "Southpark",
       "price": 16.95,
+      "release": 1999,
       "imageSrc": "/images/southpark.jpg"
     }
   ]
